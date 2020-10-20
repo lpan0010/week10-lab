@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'lab10';
+  selected = 0;
+
+  changeSelected(number) {
+    this.selected = number;
+  }
 }
