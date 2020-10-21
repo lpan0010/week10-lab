@@ -9,7 +9,9 @@ const app = express();
 app.listen(8080);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-mongoose.connect("mongodb://34.87.224.218:27017/movies", { useNewUrlParser: true, useUnifiedTopology: true} ,function (err) {
+
+console.log(process.argv[2])
+mongoose.connect("mongodb://" + process.argv[2] +":27017/movies", { useNewUrlParser: true, useUnifiedTopology: true} ,function (err) {
   if (err) {
     return console.log("Mongoose - connection error:", err);
   }
